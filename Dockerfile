@@ -1,6 +1,6 @@
 
  # Estágio de build
- FROM eclipse-temurin:17-jdk-jammy AS build
+ FROM eclipse-temurin:21-jdk-jammy AS build
  WORKDIR /app
 
  # Copia os arquivos de configuração do Gradle para o estágio de build
@@ -18,7 +18,7 @@
  RUN ./gradlew build -x test --no-daemon
 
  # Estágio de execução
- FROM eclipse-temurin:17-jre-jammy
+ FROM eclipse-temurin:21-jre-jammy
  WORKDIR /app
 
  # Copia o JAR gerado para o estágio final
