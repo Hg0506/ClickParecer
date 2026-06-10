@@ -1,12 +1,12 @@
 package br.com.ClickParecer.model;
 
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
 import jakarta.validation.constraints.NotBlank;
+import jakarta.persistence.Column;
+import jakarta.persistence.Entity;
 
 @Entity
 @Table(name = "Usuario")
@@ -15,7 +15,7 @@ public class Usuario {
     @Id
     @Column(name = "idUsuario")
     @GeneratedValue(strategy = GenerationType.IDENTITY) 
-    private int id;
+    private Integer id;
 
     @Column(nullable = false, name = "NomeUsuario")
     @NotBlank(message = "O nome do usuário é obrigatório")
@@ -48,7 +48,7 @@ public class Usuario {
         return senha;
     }
 
-    public int getId() {
+    public Integer getId() {
         return id;
     }
 
@@ -66,7 +66,7 @@ public class Usuario {
         this.senha = senha;
     }
 
-    public void setId(int id) {
+    public void setId(Integer id) {
         this.id = id;
     }
 
